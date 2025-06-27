@@ -1,0 +1,277 @@
+/* Evita desbordamiento horizontal */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+margin: 0 auto;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header,
+footer {
+  width: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #222;
+  color: #fff;
+  padding: 1rem 2rem;
+}
+
+footer {
+  background-color: #eee;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    width: 1550px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.product-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s;
+}
+
+.product-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+button {
+  padding: 0.5rem;
+  background-color: #d17d00;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #d14d00;
+}
+
+/*Estilos del carrito*/
+
+
+.cart-container {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 1rem 0;
+}
+
+.cart-item-info {
+  flex: 1;
+}
+
+.cart-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cart-total {
+  text-align: right;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+.cart-buttons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+/*EStilos página detalles del producto*/
+
+.product-detail-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.product-detail-image {
+  width: 100%;
+  max-height: 350px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.product-detail-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-detail-info p {
+  margin: 0.5rem 0;
+}
+
+
+/*Estilo pagina de pago - Checkout*/
+
+.checkout-container {
+  max-width: 500px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.checkout-container h2 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #333;
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #444;
+}
+
+.form-group input {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.total-pago {
+  text-align: right;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: #222;
+}
+
+.pagar-btn {
+  padding: 0.8rem;
+  margin-top: 1rem;
+  background-color: #d17d00;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagar-btn:hover {
+  background-color: #d14d00;
+}
+
+
+
+/* === Responsive layout === */
+
+@media (max-width: 768px) {
+  /* Header en columnas */
+  header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  /* Grilla de productos: 1 por fila */
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Producto en carrito: apilado */
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-item-actions {
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 0.5rem;
+  }
+
+  .cart-total {
+    text-align: left;
+  }
+
+  .cart-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .product-detail-container {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .checkout-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .pagar-btn {
+    width: 100%;
+  }
+}
+
+
