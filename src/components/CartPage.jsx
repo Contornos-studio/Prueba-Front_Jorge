@@ -23,7 +23,7 @@ const CartPage = () => {
   }
 
   return (
-    <div style={{ padding: '2rem' }}>
+    <div style={{ padding: '2rem', margin:'0 auto', width:'900px' }}>
       <h2>Carrito de compras</h2>
       <ul className="cart-container" style={{ listStyle: 'none', padding: 0 }}>
   {cartItems.map((item) => (
@@ -46,7 +46,7 @@ const CartPage = () => {
 
       <h3>Total: ${total.toFixed(2)}</h3>
       <Link to="/pago">
-        <button style={{ marginTop: '1rem', padding: '0.5rem 1rem' }}>Ir al pago</button>
+        <button className='boton' style={{ marginTop: '1rem', padding: '0.5rem 1rem' }}>Ir al pago</button>
       </Link>
     </div>
   );

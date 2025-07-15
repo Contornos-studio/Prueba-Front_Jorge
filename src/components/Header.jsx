@@ -18,8 +18,9 @@ const Header = ({ onSearch }) => {
 
   return (
     <header className="header">
-      <Link to="/" style={{ color: '#fff', textDecoration: 'none', fontWeight: 'bold', fontSize: '1.2rem' }}>
-        🛍️ Mi Tienda
+      <Link to="/">
+        <img src="https://exitocol.vtexassets.com/assets/vtex.file-manager-graphql/images/87172d18-1b44-4a1b-b381-f8f8b899f8f4___66042c9ea5de649a565802cc12e64967.svg" alt="" 
+        className='logo'/>
       </Link>
 
       <form onSubmit={handleSubmit}>
@@ -28,9 +29,10 @@ const Header = ({ onSearch }) => {
           placeholder="Buscar productos..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          style={{ padding: '0.3rem 0.5rem', borderRadius: '4px', marginRight: '0.5rem' }}
+          className='barrabuscador'
+         
         />
-        <button type="submit">Buscar</button>
+        <button className='boton' type="submit">Buscar</button>
       </form>
 
       <Link to="/carrito" style={{ color: '#fff', textDecoration: 'none' }}>

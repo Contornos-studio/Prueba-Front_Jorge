@@ -60,7 +60,7 @@ const CheckoutPage = () => {
       <p>Total a pagar: <strong>${total.toFixed(2)}</strong></p>
     </div>
 
-    <button type="submit" className="pagar-btn">Pagar ahora</button>
+    <button type="submit" className="boton">Pagar ahora</button>
   </form>
 </div>
 
